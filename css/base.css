@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+/* 基本样式定义 开始 */
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,select,textarea,button,th,td,blockquote,address,pre {
+	margin:0;
+	padding:0;
+}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label {
+	/*font-size:100%;*/
+	vertical-align:middle;
+}
+ul,dl,ol {
+	list-style:none;
+}
+img,fieldset {
+	border:none;
+}
+img {
+	display:inline-block;
+	overflow:hidden;
+	vertical-align:top;
+}
+em,address {
+	font-style:normal;
+}
+sup,sub {
+	vertical-align:baseline;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+	empty-cell:show;
+}
+q:before {
+	content:"";
+}
+q:after {
+	content:"";
+}
+button {
+	cursor:pointer;
+}
+textarea {
+	word-wrap:break-word;
+	resize:none;
+}
+article,aside,dialog,figure,footer,header,hgroup,nav,section {
+	display:block;
+}
+menu {
+	margin:0;
+	padding:0;
+}
+mark {
+	background-color:transparent;
+}
+body {
+	/*background-color:#fff;
+	color:#333;
+	font:12px/1.5 Tahoma,Arial,Simsun;*/
+	background-color:#FAFAFA;
+}
+body, html {
+	height:100%;
+}
+legend,button,select,textarea,input {
+	color:#333;
+	/*font-family:Tahoma,Arial,Simsun;*/
+}
+a {
+	color:#369;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:focus {
+	outline:none;
+}
+/* 基本样式定义 结束 */
+/* 页面主题宽度及背景色定义 开始 */
+.page-wrap {
+	margin-right: auto;
+	margin-left: auto;
+	max-width:1000px;
+	min-width:200px;
+	background-color:#D6D5D5;
+	min-height:100%;
+}
+/* 页面主题宽度及背景色定义 结束 */
+/* LOGO区域样式定义 开始 */
+.page-logo {
+	display:block;
+	height:60px;
+	line-height:80px;
+	overflow:hidden;
+}
+.page-logo img {
+	max-width:500px;
+	max-height:70px;
+	display:inline;
+}
+.page-logo h1 {
+	display:inline;
+	-moz-border-radius:10px; /* Old Firefox */
+	-webkit-border-radius:10px; /* Safari and Chrome */
+	-o-border-radius:10px; /* Opera */
+	-ms-border-radius:10px; /* IE */
+	border-radius:10px;
+	-webkit-box-shadow: 0 0 0.5em red; 
+	-moz-box-shadow: 0 0 0.5em red;
+	-ms-box-shadow: 0 0 0.5em red;
+	-o-box-shadow: 0 0 0.5em red;
+	box-shadow: 0 0 0.5em red;
+}
+/* LOGO区域样式定义 结束 */
+/* 表单样式定义 开始 */
+input[type="text"], input[type="password"], input[type="submit"], input[type="button"], input[type="date"], select, textarea {
+	border:1px solid #808080;
+	-moz-border-radius:5px; /* Old Firefox */
+	-webkit-border-radius:5px; /* Safari and Chrome */
+	-o-border-radius:5px; /* Opera */
+	-ms-border-radius:5px; /* IE */
+	border-radius:5px;
+	background-color:#ffffff;
+	-moz-transition:background-color 1s; /* Firefox 4 */
+	-webkit-transition:background-color 1s; /* Safari and Chrome */
+	-o-transition:background-color 1s; /* Opera */
+	-ms-transition:background-color 1s; /* IE */
+	transition:background-color 1s;
+}
+input[type="text"], input[type="password"], input[type="submit"], input[type="button"], input[type="date"] {
+	width:180px;
+}
+select {
+	width:182px;
+}
+input:focus, select:focus, textarea:focus {
+	background-color:rgba(133, 231, 242, 0.5);
+}
+input:hover, select:hover, textarea:hover {
+	-webkit-box-shadow: 0 0 0.5em gold; 
+	-moz-box-shadow: 0 0 0.5em gold;
+	-ms-box-shadow: 0 0 0.5em gold;
+	-o-box-shadow: 0 0 0.5em gold;
+	box-shadow: 0 0 0.5em gold;
+}
+input[type="submit"] {
+	font-weight:bold;
+	background:#FFE3AD;
+	background:-moz-linear-gradient(top,#FFE3AD 0,#FFD176 100%);
+	background:-webkit-linear-gradient(top,#FFE3AD 0,#FFD176 100%);
+	background:-o-linear-gradient(top,#FFE3AD 0,#FFD176 100%);
+	background:-ms-linear-gradient(top,#FFE3AD 0,#FFD176 100%);
+	background:linear-gradient(top,#FFE3AD 0,#FFD176 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFE3AD,endColorstr=#FFD176,GradientType=0);
+}
+/* 表单样式定义 结束 */
+
+/*自定义表单样式 开始*/
+table.tbFormCss tr td {
+			border: 10px solid #ffffff;
+			padding: 5 5 2 5;
+		}
+/*自定义表单样式 结束*/

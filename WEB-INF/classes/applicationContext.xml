@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<context:component-scan base-package="com.tpmgr">
+		<context:include-filter type="aspectj"
+			expression="com.tpmgr..*Dao+" />
+		<context:include-filter type="aspectj"
+			expression="com.tpmgr..*SQL+" />
+		<context:include-filter type="aspectj"
+			expression="com.tpmgr..*Service+" />
+		<context:exclude-filter type="aspectj"
+			expression="com.tpmgr..*Controller+" />
+	</context:component-scan>
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<util:properties id="filepath" location="classpath:file-path.properties" />
+
+	<bean id="dataSource" class="com.tpmgr.common.dao.CommonBasicDataSource"
+		destroy-method="close" p:driverClassName="${jdbc.driverClassName}"
+		p:url="${jdbc.url}" 
+		p:username="${jdbc.username}" 
+		p:password="${jdbc.password}"
+		p:initialSize="${jdbc.initialSize}" 
+		p:maxActive="${jdbc.maxActive}"
+		p:maxIdle="${jdbc.maxIdle}" 
+		p:minIdle="${jdbc.minIdle}"
+		p:removeAbandoned="${jdbc.removeAbandoned}" 
+		p:removeAbandonedTimeout="${jdbc.removeAbandonedTimeout}"
+		p:maxWait="${jdbc.maxWait}" 
+		p:testWhileIdle="${jdbc.testWhileIdle}"
+		p:testOnBorrow="${jdbc.testOnBorrow}" 
+		p:testOnReturn="${jdbc.testOnReturn}"
+		p:validationQuery="${jdbc.validationQuery}"
+		p:timeBetweenEvictionRunsMillis="${jdbc.timeBetweenEvictionRunsMillis}"
+		p:minEvictableIdleTimeMillis="${jdbc.minEvictableIdleTimeMillis}"
+		p:numTestsPerEvictionRun="${jdbc.numTestsPerEvictionRun}" />
+		
+	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate"
+		p:dataSource-ref="dataSource" />
+	<bean id="npjt"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+
+	<bean id="comboBean" class="com.tpmgr.common.property.ComboPropertyImpl">
+		<property name="codes">
+			<props>
+				<prop key="table">systemcode</prop>
+				<prop key="type">datatype</prop>
+				<prop key="value">code</prop>
+				<prop key="label">name</prop>
+			</props>
+		</property>
+		<!-- <property name="dynaTabs"> <list> <props> <prop key="type">department</prop> 
+			<prop key="columns">departmentNo,departmentName</prop> <prop key="sql">SELECT 
+			department_no departmentNo, department_name departmentName FROM department</prop> 
+			</props> </list> </property> -->
+	</bean>
+
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="serviceMethod" expression="execution(* com.tqmgr..*Service.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
+	</aop:config>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="modify*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="query*" propagation="REQUIRED" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+</beans>

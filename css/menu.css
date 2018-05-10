@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*命令菜单按钮
+
+by wubo
+
+08.04.23
+
+----------------------------*/
+
+#menu {
+	list-style-type:none;
+	width:570px;
+	padding:0px;
+	margin:0px auto;
+	float:right;
+}
+
+#menu .childmenu
+{
+	position:relative;
+	float:left;
+}
+
+#menu .sub {
+	float:left;
+	background-color:#99CCFF;
+	margin:2px;
+	text-align:center;
+	border:1px solid #6699CC;
+	width:130px;
+	height:25px;
+	cursor:pointer;
+}
+
+
+
+#menu .childmenu:hover
+{
+	cursor:pointer;
+}
+
+
+
+#menu li, #menu li a {
+	font-family:arial, sans-serif;
+	font-size:12px;
+	line-height:24px;
+	width:130px;
+	text-decoration:none;
+	cursor:pointer;/*font-weight:bold;*/
+	margin:2px;
+}
+
+#menu li a {
+	color:#333399;
+	display:block;
+	text-align:left;
+	padding-left:5px;
+	width:113px;
+	+width:100%;
+	border:1px solid #EFFFFF;
+}
+
+#menu  li a:hover {
+	background:#99CCFF;
+	border:1px solid #6699CC;
+	text-decoration:underline;
+}
+
+#menu ul {
+	position:absolute;
+	left:-9999px;
+	width:128px;
+	border:1px solid #6699CC;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	background-color:#EFFFFF;
+}
+
+#split_li {
+	border-top:1px dotted #6699CC;
+	padding-top:2px;
+}

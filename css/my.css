@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document */
+
+.table-a table{border:1px solid #F00}
+
+.table-b.datain2table {
+   border-collapse: collapse;
+   font-family: Arial,Helvetica,sans-serif;
+   margin-top: 10px;
+   width: 100%;
+
+}
+
+.table-b.datain2table td {
+   vertical-align: text-center;
+}
+/* CSS Document */
+
+.dataintable {
+	width:100%;
+	font-size:13px;
+	overflow: hidden;
+	border: 0px solid #d3d3d3;
+	background: #fefefe;
+	margin: 0% auto 0;
+	margin-top:10px;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3-4 */
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+.dataintable td, th {
+	padding: 5px 3px 5px 3px;
+	border-top: 1px solid #e0e0e0;
+}
+.dataintable th {
+	height:32px;
+	text-shadow: 1px 1px 1px #fff;
+	border-top: 1px solid #e0e0e0;
+}
+.dataintable td {
+	height:32px;
+	border-top: 1px solid #e0e0e0;
+	BORDER-RIGHT: medium none;
+	BORDER-LEFT: medium none;
+	
+}
+
+.dataintable tr.alt td 
+{
+	color:#000000;
+	background-color:#f6f6f6;
+}
+
+input {
+	height:28px;
+
+}
+
+.ui-input-corner-all {
+    border-radius: .3em;
+}
+
+/* 去掉所有控件的corner属性
+.ui-corner-all {
+    border-radius: 0 !important;
+} 
+
+*/
+.ui-corner-all {
+    border-radius: .2em;
+} 
+
+/*圆角大小都是1em，因此，配合实际项目，我们这里将按钮圆角reset为0.5em：*/
+.ui-btn-corner-all {
+    border-radius: .2em;
+}
+	
+	
+/* button 红色 */
+.ui-bar-x {
+	border-top: 0px solid 		#ff4500 ;
+	border-bottom: 0px solid	#ff4500 ;
+	background: 				#ff4500 /*{a-bar-background-color}*/;
+	color: 						#ffffff /*{a-bar-color}*/;
+	font-weight: bold;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ -1px /*{a-bar-shadow-y}*/ rgba(0, 0, 0, .5) /*{a-bar-shadow-color}*/;
+/*	box-shadow: 0 1px rgba(165, 46, 31, .5);
+*/	background-image: -webkit-gradient(linear, left top, left bottom, from(#1ba9ba ), to(#1ba9ba )); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #1ba9ba , #1ba9ba ); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #1ba9ba , #1ba9ba ); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #1ba9ba , #1ba9ba ); /* IE10 */
+	background-image:      -o-linear-gradient(top, #1ba9ba , #1ba9ba ); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #1ba9ba , #1ba9ba );
+	}
+	
+.ui-btn-up-x, .ui-btn-hover-x, .ui-icon-select {
+	border: 0px solid 		#760006 /*{a-bup-border}*/;
+	background: 			#ff4500 /*{a-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#fff /*{a-bup-color}*/;
+	text-shadow: none;
+/*	box-shadow: 0 1px rgba(86, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .2);
+*/	background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4500 ), to(#ff4500 ), color-stop(50% #ff4500), color-stop(50% #ff4500)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #ff4500 , #ff4500 50%, #ff4500 50% , #ff4500 ); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #ff4500 , #ff4500 50%, #ff4500 50% , #ff4500 ); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #ff4500 , #ff4500 50%, #ff4500 50% , #ff4500 ); /* IE10 */
+	background-image:      -o-linear-gradient(top, #ff4500 , #ff4500 50%, #ff4500 50% , #ff4500 ); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #ff4500 , #ff4500 50%, #ff4500 50% , #ff4500 );
+	}
+.ui-btn-up-x a.ui-link-inherit {
+	color: 					#fff /*{a-bup-color}*/;
+	}
+.ui-btn-hover-x a.ui-link-inherit {
+	color: 					#fff /*{a-bhover-color}*/;
+	}
+.ui-btn-down-x {
+	border: 1px solid 		#792525 /*{a-bdown-border}*/;
+	box-shadow: 0 1px rgba(255, 255, 255, .2);
+	}
+.ui-btn-down-x .ui-btn-inner {
+	box-shadow: 0 -1px rgba(0, 0, 0, .5);
+	}
+.ui-btn-down-x .ui-btn-text {
+	top:1px;
+	}
+.ui-btn-down-x a.ui-link-inherit {
+	color: 					#fff /*{a-bdown-color}*/;
+	}
+.ui-btn-down-x .ui-icon {
+	margin-top: -8px;
+	}
+	
+.ui-btn-up-x,
+.ui-btn-hover-x,
+.ui-btn-down-x {
+	font-family: Helvetica, Arial, sans-serif /*{a-button-font}*/;
+	text-decoration: none;
+}
+
+/* bar + button 淡蓝色色 */
+.ui-bar-y {
+	border-top: 0px solid 		#77ffff ;
+	border-bottom: 0px solid	#77ffff ;
+	background: 				#77ffff /*{a-bar-background-color}*/;
+	color: 						#ffffff /*{a-bar-color}  bar上的title钮字体颜色*/;
+	font-weight: bold;
+	text-shadow: 0 /*{a-bar-shadow-y}*/ -1px /*{a-bar-shadow-y}*/ rgba(0, 0, 0, .5) /*{a-bar-shadow-color}*/;
+/*	box-shadow: 0 1px rgba(165, 46, 31, .5);
+*/	background-image: -webkit-gradient(linear, left top, left bottom, from(#1ba9ba ), to(#1ba9ba )); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #1ba9ba , #1ba9ba ); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #1ba9ba , #1ba9ba ); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #1ba9ba , #1ba9ba ); /* IE10 */
+	background-image:      -o-linear-gradient(top, #1ba9ba , #1ba9ba ); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #1ba9ba , #1ba9ba );
+	}
+	
+.ui-btn-up-y, .ui-btn-hover-y, .ui-icon-select {
+	border: 0px solid 		#760006 /*{a-bup-border}*/;
+	background: 			#77ffff /*{a-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#1ba9ba /*{a-bup-color} bar上的按钮字体颜色*/;
+	text-shadow: none;
+/*	box-shadow: 0 1px rgba(86, 0, 0, .2), 0 0 1px rgba(0, 0, 0, .2);
+*/	background-image: -webkit-gradient(linear, left top, left bottom, from(#77ffff ), to(#77ffff ), color-stop(50% #77ffff), color-stop(50% #77ffff)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #77ffff , #77ffff 50%, #77ffff 50% , #77ffff ); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top, #77ffff , #77ffff 50%, #77ffff 50% , #77ffff ); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #77ffff , #77ffff 50%, #77ffff 50% , #77ffff ); /* IE10 */
+	background-image:      -o-linear-gradient(top, #77ffff , #77ffff 50%, #77ffff 50% , #77ffff ); /* Opera 11.10+ */
+	background-image:         linear-gradient(top, #77ffff , #77ffff 50%, #77ffff 50% , #77ffff );
+	}
+.ui-btn-up-y a.ui-link-inherit {
+	color: 					#ff4500 /*{a-bup-color}*/;
+	}
+.ui-btn-hover-y a.ui-link-inherit {
+	color: 					#ff4500 /*{a-bhover-color}*/;
+	}
+.ui-btn-down-y {
+	border: 1px solid 		#792525 /*{a-bdown-border}*/;
+	box-shadow: 0 1px rgba(255, 255, 255, .2);
+	}
+.ui-btn-down-y .ui-btn-inner {
+	box-shadow: 0 -1px rgba(0, 0, 0, .5);
+	}
+.ui-btn-down-y .ui-btn-text {
+	top:1px;
+	}
+.ui-btn-down-y a.ui-link-inherit {
+	color: 					#ff4500 /*{a-bdown-color}*/;
+	}
+.ui-btn-down-y .ui-icon {
+	margin-top: -8px;
+	}
+	
+.ui-btn-up-y,
+.ui-btn-hover-y,
+.ui-btn-down-y {
+	font-family: Helvetica, Arial, sans-serif /*{a-button-font}*/;
+	text-decoration: none;
+}
+
